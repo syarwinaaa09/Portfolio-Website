@@ -6,10 +6,24 @@
 }
 
 :root {
-    --color-primary: #f7c6e5; /* light pink */
-    --color-secondary: #f04886; /* bright pink */
-    --color-white: #fcfafa;
-    --color-black: #222222;
+    --color-primary: #FFFFFF;
+    --color-secondary:#0077c2;
+    --color-white: #454e56;
+    --color-black: #000;
+    --color-grey0: #f8f8f8;
+    --color-grey-1: #6c7983;
+    --color-grey-2: #6c7983;
+    --color-grey-3: #6c7983;
+    --color-grey-4: #454e56;
+    --color-grey-5: #f8f8f8;
+    --color-grey-6: #12181b;
+  }
+
+.dark-mode{
+    --color-primary: #191d2b;
+    --color-secondary: #AF69EE;
+    --color-white: #FFFFFF;
+    --color-black: #000;
     --color-grey0: #f8f8f8;
     --color-grey-1: #dbe1e8;
     --color-grey-2: #b2becd;
@@ -17,12 +31,9 @@
     --color-grey-4: #454e56;
     --color-grey-5: #2a2e35;
     --color-grey-6: #12181b;
-    --color-pastel-blue: #9dc8c8;
-    --color-pastel-green: #c8d99d;
-    --color-pastel-purple: #c89dc8;
     --br-sm-2: 14px;
-    --box-shadow-1: 0 3px 15px rgba(0, 0, 0, 0.3);
-  }
+    --box-shadow-1: 0 3px 15px rgba(0,0,0,.3);
+}
 
 body {
     background-color: var(--color-primary);
@@ -137,6 +148,30 @@ section{
     }
 }
 
+.theme-btn{
+    top: 5%;
+    right: 3%;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--color-grey-4);
+    cursor: pointer;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,.3);
+    transition: all .1s ease-in-out;
+    &:active{
+        transform: translateY(-3px);
+    }
+    i{
+        font-size: 1.4rem;
+        color: var(--color-grey-2);
+        pointer-events: none;
+    }
+}
+
 /*Header-content*/
 .header-content{
     display: grid;
@@ -184,7 +219,6 @@ section{
         padding-right: 18rem;
         .name{
             font-size: 3rem;
-            color: var(--color-grey-4);
             span{
                 color: var(--color-secondary);
             }
@@ -192,7 +226,6 @@ section{
         p{
             margin: 1.5rem 0;
             line-height: 2rem;
-            color: var(--color-grey-4)
         }
     }
 }
@@ -232,7 +265,7 @@ section{
                     position: relative;
                     text-transform: uppercase;
                     font-size: 1.2rem;
-                    color: var(--color-grey-4);
+                    color: var(--color-grey-1);
                     letter-spacing: 2px;
                     &::before{
                         content: '';
@@ -253,7 +286,7 @@ section{
         p{
             line-height: 2rem;
             padding: 1rem;
-            color: var(--color-grey-4);
+            color: var(--color-grey-1);
         }
         h4{
             font-size: 2rem;
@@ -271,7 +304,7 @@ section{
     .timeline-item{
         position: relative;
         padding-left: 3rem;
-        border-left: 1px solid var(--color-grey-1);
+        border-left: 1px solid var(--color-grey-5);
         .tl-icon{
             position: absolute;
             left: -27px;
@@ -289,7 +322,7 @@ section{
         }
         .tl-duration{
             padding: .2rem .6rem;
-            background-color: var(--color-secondary);
+            background-color: var(--color-grey-5);
             border-radius: 15px;
             display: inline-block;
             font-size: .8rem;
@@ -301,15 +334,14 @@ section{
             text-transform: uppercase;
             font-size: 1.3rem;
             font-weight: 600;
-            color: var(--color-secondary);
             span{
-                color: var(--color-grey-4);
+                color: var(--color-grey-2);
                 font-weight: 500;
                 font-size: 1.2rem;
             }
         }
         p{
-            color: var(--color-grey-4);
+            color: var(--color-grey-2);
         }
     }
 }
@@ -318,7 +350,6 @@ section{
 .port-text{
     padding: 2rem 0;
     text-align: center;
-    color: var(--color-grey-4);
 }
 
 .portfolios{
@@ -402,7 +433,7 @@ section{
     margin-top: 3rem;
     .blog{
         position: relative;
-        background-color: var(--color-secondary);
+        background-color: var(--color-grey-5);
         border-radius: 5px;
         box-shadow: 1px 1px 20px rgba(0,0,0,.1);
         transition: all .4s ease-in-out;
@@ -427,21 +458,121 @@ section{
         .blog-text{
             margin-top: -7px;
             padding: 1.1rem;
-            border-top: 8px solid var(--color-primary);
+            border-top: 8px solid var(--color-secondary);
             h4{
                 font-size: 1.5rem;
                 margin-bottom: .7rem;
                 transition: all .4s ease-in-out;
                 cursor: pointer;
                 &:hover{
-                    color: var(--color-primary);
+                    color: var(--color-secondary);
                 }
             }
             p{
-                color: var(--color-white);
+                color: var(--color-grey-2);
                 line-height: 2rem;
                 padding-bottom: 1rem;
             }
+        }
+    }
+}
+
+//Contact section
+.contact-content-con{
+    display: flex;
+    padding-top: 3.5rem;
+    .left-contact{
+        flex: 2;
+        h4{
+            margin-top: 1rem;
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+        p{
+            margin: 1rem 0;
+            line-height: 2rem;
+        }
+
+        .contact-info{
+            .contact-item{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                p{
+                    margin: .3rem 0 !important;
+                    padding: 0 !important;
+                }
+                .icon{
+                    display: grid;
+                    grid-template-columns: 40px 1fr;
+                    i{
+                        display: flex;
+                        align-items: center;
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+        }
+
+        .contact-icon{
+            display: flex;
+            margin-top: 2rem;
+            a{
+                display: flex; 
+                align-items: center;
+                color: var(--color-white);
+                background-color: var(--color-grey-5);
+                cursor: pointer;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                margin: 0 .4rem;
+                transition: all .4s ease-in-out;
+                &:hover{
+                    background-color: var(--color-secondary);
+                    i{
+                        color: var(--color-primary);
+                    }
+                }
+                i{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+
+    .right-contact{
+        flex: 3;
+        margin-left: 3rem;
+        .input-control{
+            margin: 1.5rem 0;
+            input, textarea{
+                border-radius: 30px;
+                font-weight: inherit;
+                font-size: inherit;
+                font-family: inherit;
+                padding: .8rem 1.1rem;
+                outline: none;
+                border: none;
+                background-color: var(--color-grey-5);
+                width: 100%;
+                color: var(--color-white);
+                resize: none;
+            }
+        }
+        .i-c-2{
+            display: flex;
+            :last-child{
+                margin-left: 1.5rem;
+            }
+        }
+        .submit-btn{
+            display: flex;
+            justify-content: flex-start;
         }
     }
 }
@@ -456,7 +587,7 @@ section{
     color: inherit;
     font-weight: 600;
     position: relative;
-    border: 1px solid var(--color-grey-4);
+    border: 1px solid var(--color-secondary);
     display: flex;
     align-self: flex-start;
     display: flex;
@@ -466,7 +597,7 @@ section{
         padding: 0 2rem;
     }
     .btn-icon{
-        background-color: var(--color-grey-4);
+        background-color: var(--color-seconary);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -508,7 +639,7 @@ section{
             position: absolute;
             top: 50%;
             left: 50%;
-            color: var(--color-pastel-purple);
+            color: var(--color-grey-5);
             transition: all .4s ease-in-out;
             z-index: -1;
             transform: translate(-50%, -50%);
